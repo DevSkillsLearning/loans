@@ -17,3 +17,9 @@ spring:
     console:
       enable: 'true'
 
+  flyway:
+    username: sa
+    password: ''
+
+
+
