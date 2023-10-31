@@ -23,6 +23,11 @@ spring:
   flyway:
     username: sa
     password: ''
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 
 
