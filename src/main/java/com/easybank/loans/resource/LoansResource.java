@@ -103,10 +103,11 @@ public class LoansResource {
     @GetMapping("/fetch")
     public ResponseEntity<LoansDto> fetchLoanDetails(@RequestHeader("eazybank-correlation-id") String correlationId,
                                                      @RequestParam
-                                                     @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
+                                                     @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
                                                      String mobileNumber) {
-        log.debug("eazyBank-correlation-id found: {} ", correlationId);
+        log.debug("fetchLoanDetails start");
         LoansDto loansDto = loansService.fetchLoan(mobileNumber);
+        log.debug("fetchLoanDetails end");
         return ResponseEntity.status(HttpStatus.OK).body(loansDto);
     }
 
